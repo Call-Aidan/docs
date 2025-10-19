@@ -183,7 +183,7 @@ Review the tools already connected to your agent. You can adjust configurations,
     - **Description** – When to use this transfer destination
     - **Phone Number** – E.164 format (e.g., `+61412345678`)
     - **Transfer Message** – What the agent says before transferring
-    - **Transfer Type** – Choose from three options:
+    - **Transfer Type** – Choose from four options:
 
     **Transfer Types:**
 
@@ -211,6 +211,14 @@ Review the tools already connected to your agent. You can adjust configurations,
         - ✅ Can include specific instructions
         - ✅ Perfect for specialized departments
       </Accordion>
+
+      <Accordion title="Warm Transfer with Agent" icon="headset">
+        **Concierge transfer** – Agent rings the destination first, gives context, and confirms whether to connect the caller.
+
+        - ✅ Prevents cold handoffs—recipient opts in before the caller joins
+        - ✅ Agent delivers a short recap and captures any instructions
+        - ✅ If the recipient declines, the agent ends the transfer gracefully and updates the caller
+      </Accordion>
     </AccordionGroup>
 
     **Example Setup:**
@@ -224,7 +232,12 @@ Review the tools already connected to your agent. You can adjust configurations,
     Destination 2: Technical Support
     - Description: "When caller has technical issues or needs troubleshooting"
     - Message: "I'll transfer you to our technical support team who specializes in these issues."
-    - Transfer Type: Warm Transfer with Message: "Customer needs help with [specific issue]"
+    - Transfer Type: Warm Transfer with Message (e.g. "Customer needs help with [specific issue]")
+
+    Destination 3: VIP Escalations
+    - Description: "When the caller is a high-value client or requests a manager"
+    - Message: "One moment while I check if our lead consultant is available to speak with you."
+    - Transfer Type: Warm Transfer with Agent
     ```
 
     **Use Cases:**
@@ -549,7 +562,18 @@ Add ambient background noise to make your calls feel more human and authentic.
 
 - **Office** – General office sounds (keyboard typing, subtle background chatter)
 - **Lounge** – General lounge sounds (subtle café/waiting room ambience)
+- **Custom Upload (MP3)** – Bring your own ambience by uploading an MP3 file; perfect for branded office loops or on-site recordings.
 - **Mute** – No background sound (clean audio only)
+
+**Upload a Custom Background:**
+
+1. Click **Upload custom MP3** and choose your file.
+2. Wait for the upload to finish—your track will appear alongside the presets.
+3. Save the agent to make the custom sound live on calls.
+
+<Note>
+  We recommend short, subtle loops so the audio blends into the call.
+</Note>
 
 **When to Use Background Sound:**
 

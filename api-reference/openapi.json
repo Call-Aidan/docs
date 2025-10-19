@@ -3254,7 +3254,12 @@
           "background": {
             "type": "string",
             "enum": ["lounge", "off", "url"],
-            "description": "Background audio (voicebot only)"
+            "description": "Background audio (voicebot only). Set to \"url\" to use a custom MP3 provided via background_url."
+          },
+          "background_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Public URL for custom background audio (voicebot only, used when background is set to \"url\")"
           },
           "variables": {
             "type": "array",
@@ -3582,7 +3587,12 @@
           "background": {
             "type": "string",
             "enum": ["lounge", "off", "url"],
-            "description": "Background audio (voicebot only)"
+            "description": "Background audio (voicebot only). Set to \"url\" to use a custom MP3 provided via background_url."
+          },
+          "background_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Public URL for custom background audio (voicebot only, used when background is set to \"url\")"
           },
           "hipaa_enabled": {
             "type": "string",
