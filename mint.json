@@ -1,0 +1,187 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Aidan",
+  "logo": {
+    "dark": "/logo/logo-light.png",
+    "light": "/logo/logo-dark.png"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#DD050E",
+    "light": "#DD050E",
+    "dark": "#DD050E",
+    "anchors": {
+      "from": "#DD050E",
+      "to": "#DD050E"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@callaidan.com"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Dashboard",
+    "url": "https://app.callaidan.com"
+  },
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Documentation",
+      "icon": "book-open-cover",
+      "url": "https://docs.callaidan.com"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "introduction",
+        "quickstart",
+        "chat-agents",
+        "voice-agents",
+        "telephony",
+        "tool-library",
+        "gohighlevel"
+      ]
+    },
+    {
+      "group": "API Documentation",
+      "pages": ["api-reference/introduction"]
+    },
+    {
+      "group": "Agent Endpoints",
+      "pages": [
+        "api-reference/endpoint/list",
+        "api-reference/endpoint/get",
+        "api-reference/endpoint/create",
+        "api-reference/endpoint/update",
+        "api-reference/endpoint/duplicate",
+        "api-reference/endpoint/delete"
+      ]
+    },
+    {
+      "group": "Chat & Call Endpoints",
+      "pages": ["api-reference/endpoint/chat", "api-reference/endpoint/call"]
+    },
+    {
+      "group": "Agent Files",
+      "pages": [
+        "api-reference/endpoint/file-get",
+        "api-reference/endpoint/file-upload",
+        "api-reference/endpoint/file-update",
+        "api-reference/endpoint/file-delete"
+      ]
+    },
+    {
+      "group": "Agent Integrations",
+      "pages": [
+        "api-reference/endpoint/integration-create",
+        "api-reference/endpoint/integration-update",
+        "api-reference/endpoint/integration-delete"
+      ]
+    },
+    {
+      "group": "Contact Endpoints",
+      "pages": [
+        "api-reference/endpoint/contact-list",
+        "api-reference/endpoint/contact-get",
+        "api-reference/endpoint/contact-create",
+        "api-reference/endpoint/contact-update",
+        "api-reference/endpoint/contact-delete"
+      ]
+    },
+    {
+      "group": "Conversation Endpoints",
+      "pages": [
+        "api-reference/endpoint/conversation-list",
+        "api-reference/endpoint/conversation-get"
+      ]
+    },
+    {
+      "group": "Call Logs",
+      "pages": [
+        "api-reference/endpoint/call-logs",
+        "api-reference/endpoint/call-logs-agent"
+      ]
+    },
+    {
+      "group": "Chat Logs",
+      "pages": [
+        "api-reference/endpoint/chat-logs",
+        "api-reference/endpoint/chat-logs-agent"
+      ]
+    },
+    {
+      "group": "Transcripts",
+      "pages": [
+        "api-reference/endpoint/transcript-list",
+        "api-reference/endpoint/transcript-list-agent",
+        "api-reference/endpoint/transcript-get",
+        "api-reference/endpoint/transcript-delete"
+      ]
+    },
+    {
+      "group": "Agent Tools",
+      "pages": [
+        "api-reference/endpoint/tool-list",
+        "api-reference/endpoint/tool-create",
+        "api-reference/endpoint/tool-delete"
+      ]
+    },
+    {
+      "group": "Tool Instance Endpoints",
+      "pages": [
+        "api-reference/endpoint/module-list",
+        "api-reference/endpoint/module-get",
+        "api-reference/endpoint/module-create",
+        "api-reference/endpoint/module-update",
+        "api-reference/endpoint/module-duplicate",
+        "api-reference/endpoint/module-delete"
+      ]
+    },
+    {
+      "group": "Tool Configuration",
+      "pages": [
+        "api-reference/endpoint/module-config-get",
+        "api-reference/endpoint/module-config-update"
+      ]
+    },
+    {
+      "group": "Company Settings",
+      "pages": [
+        "api-reference/endpoint/settings-company-get",
+        "api-reference/endpoint/settings-company-update",
+        "api-reference/endpoint/settings-company-delete",
+        "api-reference/endpoint/settings-transfer",
+        "api-reference/endpoint/settings-duplicate"
+      ]
+    },
+    {
+      "group": "Company Staff Management",
+      "pages": [
+        "api-reference/endpoint/settings-invite-create",
+        "api-reference/endpoint/settings-invite-delete",
+        "api-reference/endpoint/settings-staff-update",
+        "api-reference/endpoint/settings-staff-delete"
+      ]
+    },
+    {
+      "group": "Company Phone Numbers",
+      "pages": [
+        "api-reference/endpoint/settings-phone-list",
+        "api-reference/endpoint/settings-phone-create",
+        "api-reference/endpoint/settings-phone-assign"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "linkedin": "https://www.linkedin.com/company/callaidan/"
+  }
+}

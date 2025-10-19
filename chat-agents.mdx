@@ -1,0 +1,704 @@
+---
+title: "Chat Agents"
+icon: "comments"
+description: "Refine the Aidan-built chat agents and keep them aligned with your campaigns"
+---
+
+## Overview
+
+Chat agents handle every written channel—Instagram DMs, Facebook Messenger, web chat widgets, SMS, WhatsApp, and email. We’ve already created the baseline agents for you. This guide shows how to safely tweak prompts, tools, integrations, and advanced settings so you can iterate without spinning up brand-new agents from scratch.
+
+---
+
+## Navigate Your Agents
+
+### Step 1: Review the Agents Tab
+
+Head to the **Agents** tab to view everything we’ve launched for you. Each tile reflects the campaigns our team maintains.
+
+<Frame>
+  <img src="/images/chat-agents-dashboard.png" alt="Chat Agents Dashboard" />
+</Frame>
+
+---
+
+## Edit the Prompt
+
+We seeded each agent’s prompt based on your onboarding brief. You can adjust wording, tone, or business rules directly in the editor—just follow the checklist below and remember to loop us in if the changes are significant.
+
+<Frame>
+  <img src="/images/chat-agent-prompt.png" alt="Chat Agent Prompt Editor" />
+</Frame>
+
+### What to Include:
+
+1. **Agent's Role** – Who should the agent represent? (e.g., "You are a friendly customer service representative for XYZ Company")
+2. **Tone & Personality** – Formal, casual, enthusiastic, empathetic, etc.
+3. **Goals** – What outcomes matter most? (qualify leads, book appointments, answer FAQs)
+4. **Tool Usage Instructions** – Call out when to use connected tools, e.g.:
+
+```
+When a customer wants to book an appointment, call the book_appointment tool.
+When you need to check inventory, use the check_stock tool.
+```
+
+<Tip>
+  After editing, click **Save** and run a quick test conversation in the preview
+  window. If you’re making a large strategic change, notify your strategist so
+  we can review analytics after the update.
+</Tip>
+
+---
+
+## Manage Tools and Automations
+
+Tools give your chat agent superpowers—booking appointments, pushing data to CRMs, fetching live information, and more. You can enable/disable existing tools, update configuration values, and add new ones from the Tool Library.
+
+<AccordionGroup>
+  <Accordion title="Custom URL" icon="link">
+    Use this when you need a bespoke workflow. Paste the webhook URL, select the method (GET, POST, etc.), add headers, and define the request/response formats. Test after saving to ensure the agent calls it successfully.
+
+    <Frame>
+      <img src="/images/chat-tool-custom-url.png" alt="Custom URL Tool" />
+    </Frame>
+
+    **Use Cases:**
+    - Send lead data to your CRM
+    - Trigger automations in Zapier or Make
+    - Connect to third-party APIs
+    - Update external databases
+
+  </Accordion>
+
+  <Accordion title="Tool Library" icon="books">
+    Browse the ready-made automations. Toggle on the ones you need, fill in required configuration fields (API keys, calendar IDs, etc.), and hit **Save**. Reach out if you need a tool that isn’t listed—we can usually build it quickly.
+
+    **Available Tools:**
+
+    **Cal.com Integration:**
+    - **Cancel or Reschedule Booking** – Cancel or reschedule a booking made in Cal.com
+    - **Fetch Free Slots** – Fetch free slots between two dates for a specific event type
+    - **Get User Bookings** – Get a list of bookings for a specific user so you can reschedule or cancel it
+
+    **GoHighLevel Integration:**
+    - **Cancel or Reschedule Appointment** – Cancel or reschedule a specific appointment to a later date
+    - **Fetch Free Slots** – Fetch a list of free slots for a calendar within a specific time range
+    - **Find Or Create Contact** – Find or create a contact to use for appointment booking and other functions
+    - **Get Booked Appointments** – Retrieve a list of booked appointments for a contact
+
+    **Popular Tools:**
+    - **Book AI Callback** – Allow agents to call users back at a later time
+    - **Get Current Time** – Get the current time for a given timezone in ISO 8601 format
+    - **Send SendGrid Email** – Integrate SendGrid to send emails directly from your agent
+    - **Send Twilio SMS** – Integrate Twilio to send text messages directly from your agent
+    - **Solar Savings (US Only)** – Calculate estimated savings of switching to solar based on monthly bill and address
+
+    <Frame>
+      <img src="/images/chat-tool-library.png" alt="Tool Library" />
+    </Frame>
+
+    <Tip>
+      The tool library grows constantly. We’ll flag new additions that align with your campaigns.
+    </Tip>
+
+  </Accordion>
+
+  <Accordion title="Calendar Booking" icon="calendar">
+    Keep calendar booking connected so the agent can check availability and schedule appointments automatically. Adjust calendar IDs or buffer times if your availability changes.
+
+    **Currently Supported:**
+    - ✅ GoHighLevel calendars
+    - ✅ Cal.com
+
+    **Coming Soon:**
+    - 🔜 HubSpot
+    - 🔜 Salesforce
+
+    <Frame>
+      <img src="/images/chat-tool-calendar.png" alt="Calendar Booking Tool" />
+    </Frame>
+
+    **What the agent can do:**
+    - Check real-time availability
+    - Book appointments
+    - Reschedule existing bookings
+    - Cancel appointments
+    - Send confirmation messages
+
+  </Accordion>
+
+  <Accordion title="MCP Server" icon="server">
+    Need advanced integrations? You can add an MCP server URL from Zapier to unlock thousands of apps. If you’d like us to host/manage the MCP server, just provide the app list and we’ll take care of it.
+
+    **Our setup process:**
+
+    <Steps>
+      <Step title="1. Access Zapier MCP">
+        We log into [mcp.zapier.com](https://mcp.zapier.com) with the integration account you provide or invite us to.
+      </Step>
+
+      <Step title="2. Create New MCP Server">
+        Our team creates the server and selects **Other** as the MCP client type, tailored to Aidan’s platform.
+
+        <Frame>
+          <img src="/images/mcp-create-server.png" alt="Create MCP Server" />
+        </Frame>
+      </Step>
+
+      <Step title="3. Add Tools from 8,000+ Apps">
+        We add the tools your workflow needs. Popular options include:
+        - **Google Sheets** – Search, create, and update spreadsheets
+        - **Gmail** – Send emails and manage inbox
+        - **Slack** – Send messages and create channels
+        - **HubSpot** – Manage contacts and deals
+        - **Salesforce** – Update records and create tasks
+        - **Airtable** – Query and update databases
+      </Step>
+
+      <Step title="4. Connect Apps">
+        We authenticate or guide your team through OAuth so the MCP server can access each app securely.
+
+        <Frame>
+          <img src="/images/mcp-select-tools.png" alt="Select MCP Tools" />
+        </Frame>
+      </Step>
+
+      <Step title="5. Share Server URL">
+        After configuration we capture the MCP server URL and keep it on file for ongoing management.
+
+        <Frame>
+          <img src="/images/mcp-server-url.png" alt="Copy MCP Server URL" />
+        </Frame>
+      </Step>
+
+      <Step title="6. Connect Inside Aidan">
+        Paste the server URL into the **MCP Server** field for the agent and select which tools it can access.
+
+        <Frame>
+          <img src="/images/chat-tool-mcp-server.png" alt="MCP Server in Aidan" />
+        </Frame>
+      </Step>
+
+      <Step title="7. Select Specific Tools">
+        Choose which tools from your MCP server to make available to your chat agent.
+
+        <Frame>
+          <img src="/images/mcp-select-agent-tools.png" alt="Select Tools for Agent" />
+        </Frame>
+      </Step>
+    </Steps>
+
+    **Example Use Cases:**
+
+    <AccordionGroup>
+      <Accordion title="Google Sheets Integration" icon="table">
+        **Search customer data during conversations:**
+        - Look up customer information from spreadsheets
+        - Update appointment bookings in real-time
+        - Track conversation outcomes and lead quality
+      </Accordion>
+
+      <Accordion title="CRM Integration" icon="address-book">
+        **Update customer records:**
+        - Create new contacts during conversations
+        - Update deal stages based on chat interactions
+        - Add conversation notes and follow-up tasks
+      </Accordion>
+
+      <Accordion title="Communication Tools" icon="envelope">
+        **Send follow-up messages:**
+        - Email appointment confirmations
+        - Send Slack notifications to team
+        - Create tasks in project management tools
+      </Accordion>
+    </AccordionGroup>
+
+    **Advanced Features:**
+
+    - **Real-time Data Access** – Query live data during conversations
+    - **Multi-app Workflows** – Chain actions across different services
+    - **Custom Authentication** – Secure access to your business tools
+    - **Error Handling** – Graceful fallbacks when tools fail
+
+    <Tip>
+      **Pro Tip:** Start with 2-3 essential tools and gradually add more as you become comfortable with MCP integration. Too many tools can slow down response times.
+    </Tip>
+
+    <Note>
+      MCP servers provide a standardized way for AI agents to interact with external tools and data sources. Zapier's MCP integration gives you access to 8,000+ apps without custom development.
+    </Note>
+
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Platform Integrations
+
+Use this panel to check which channels are active. You can toggle channels yourself, but we recommend alerting us so we can confirm routing rules and update analytics dashboards.
+
+<Frame>
+  <img
+    src="/images/chat-platform-integrations.png"
+    alt="Platform Integrations"
+  />
+</Frame>
+
+### Available Channels:
+
+<CardGroup cols={2}>
+  <Card title="Instagram DMs" icon="instagram">
+    We enable coverage for Instagram direct messages tied to your Business Account.
+  </Card>
+
+{" "}
+
+<Card title="Facebook Messenger" icon="facebook-messenger">
+  Messenger conversations route through the agent once we activate your page
+  connection.
+</Card>
+
+{" "}
+
+<Card title="Email" icon="envelope">
+  We can automate branded email replies using your verified sending domain.
+</Card>
+
+{" "}
+
+<Card title="SMS" icon="message">
+  Two-way SMS powered by the numbers our telephony team manages for you.
+</Card>
+
+{" "}
+
+<Card title="WhatsApp" icon="whatsapp">
+  Managed WhatsApp Business messaging with templated responses and opt-in flows.
+</Card>
+
+  <Card title="Web Chat" icon="comment-dots">
+    We’ll provide embed code so your web team can add the widget wherever needed.
+  </Card>
+</CardGroup>
+
+<Warning>
+  Before turning a channel on, make sure the connected platform (e.g., Facebook
+  Page, Instagram Business account) is authenticated and you’re ready for the
+  agent to respond to all new conversations.
+</Warning>
+
+---
+
+## Triggers for Campaigns & Keyword Flows
+
+Triggers give you precise control over when your agent should respond. Tell us the keywords or flows you need and we’ll configure them.
+
+### How Triggers Work:
+
+1. We add a trigger word or phrase (e.g., "start", "book", "info")
+2. The agent only wakes up when the incoming message matches the trigger
+3. Messages that don't match the trigger are ignored by the AI
+
+### Example Use Cases:
+
+<AccordionGroup>
+  <Accordion title="Instagram Reel Campaigns" icon="video">
+    "DM me **START** to claim your free voucher!"
+    
+    The agent only responds to messages containing "start", ignoring casual comments and other DMs.
+  </Accordion>
+
+{" "}
+
+<Accordion title="Keyword-Based Routing" icon="route">
+  - **"book"** → Activate booking agent - **"support"** → Activate support agent
+  - **"refund"** → Activate refund agent
+</Accordion>
+
+  <Accordion title="Manual Control" icon="hand">
+    Ask us to add a trigger so the AI stays quiet when you’re personally chatting with VIP clients.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  Want full coverage? We’ll remove triggers so every message receives an instant
+  response.
+</Tip>
+
+---
+
+## Delay Settings
+
+We use response delays to make conversations feel natural. Here’s how we tune them together.
+
+### Configuration:
+
+- **Minimum delay** – The shortest time before the agent responds
+- **Maximum delay** – The longest time before the agent responds
+- We randomize the actual delay between these values
+
+### Recommended Starting Points:
+
+<CardGroup cols={2}>
+  <Card title="Instant Response" icon="bolt">
+  Min: 0 seconds Max: 5 seconds For time-sensitive inquiries or customer support
+  </Card>
+
+{" "}
+
+<Card title="Human-like Response" icon="user">
+  Min: 30 seconds Max: 120 seconds For conversations that should feel natural
+  and unhurried
+</Card>
+
+{" "}
+
+<Card title="Casual Response" icon="coffee">
+  Min: 2 minutes Max: 10 minutes For lower-priority channels or when mimicking a
+  busy human
+</Card>
+
+  <Card title="Business Hours Simulation" icon="clock">
+    Min: 15 minutes Max: 60 minutes For email responses or non-urgent inquiries
+  </Card>
+</CardGroup>
+
+<Note>
+  **Why randomize?** A fixed delay (e.g., always 60 seconds) feels robotic.
+  Random delays make the agent feel more human and authentic.
+</Note>
+
+---
+
+## Knowledge Base
+
+Keep the knowledge base fresh so the agent always references accurate information. You can add content yourself or ask us to handle larger updates.
+
+<AccordionGroup>
+  <Accordion title="Upload Files" icon="file-arrow-up">
+    Click **Upload File**, drop in PDFs, DOCX, CSV, TXT, or Markdown files, and
+    hit **Save**. The agent will ingest the content automatically. For sizeable
+    handbooks, let us know so we can confirm token usage.
+  </Accordion>
+  <Accordion title="Scrape Websites" icon="globe">
+    Use **Add Source → Website** to scrape live pages. Paste the URL, choose
+    whether to follow links, and save. Great for product pages, help centres, or
+    menus that change often.
+  </Accordion>
+  <Accordion title="Paste Text" icon="text">
+    For quick updates, open **Add Source → Paste Text**, drop in the
+    instructions, and save. Perfect for promotions, objection handling, or
+    limited-time messaging.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  After adding material, run a quick test conversation to ensure the agent
+  retrieves the new information. If you spot gaps or hallucinations, DM your
+  strategist—we can adjust relevance weights or restructure the content.
+</Tip>
+
+---
+
+## Agent Settings
+
+You have access to all advanced settings. Feel free to tweak them as your campaigns evolve—just document what you change (we recommend noting it in Slack) so we can help monitor results.
+
+### Time Zone
+
+Open **Settings → General** and pick the time zone that matches your audience. This keeps statements like “tomorrow at 3pm” accurate. Update it any time you enter a new market.
+
+---
+
+### Model Selection
+
+Choose the AI model that powers your agent. Use the dropdown in **Settings → Model** and click **Save**. Each option balances speed, reasoning, and cost differently.
+
+<Frame>
+  <img src="/images/chat-settings-model.png" alt="Model Selection" />
+</Frame>
+
+<AccordionGroup>
+  <Accordion title="GPT-4.1 (Recommended)" icon="star">
+    **Best balance of speed, cost, and intelligence.**
+
+    - ⚡ Fast response times
+    - 💰 Cost-effective for high-volume conversations
+    - 🧠 Excellent understanding of context and nuance
+    - ✅ Recommended for most use cases
+
+    **Pricing:** ~$0.01 per conversation
+
+  </Accordion>
+
+  <Accordion title="GPT-4o" icon="brain">
+    **OpenAI's flagship model with superior performance.**
+
+    - 🎯 Superior reasoning ability
+    - 📚 Better handling of complex knowledge bases
+    - 💡 More creative responses
+    - 💸 Higher cost per conversation
+
+    **Pricing:** ~$0.015 per conversation
+
+    **Best for:** High-value conversations, complex product lines, technical support
+
+  </Accordion>
+
+  <Accordion title="GPT-4.1 Mini / Nano" icon="gauge-simple-min">
+    **Ultra-cheap, only for very basic auto-responses.**
+
+    - 🏃 Extremely fast
+    - 💵 Very low cost
+    - ⚠️ Limited reasoning ability
+    - 📝 Best for simple, scripted responses
+
+    **Pricing:** ~$0.001 per conversation
+
+    **Best for:** Simple FAQs, basic greetings, keyword-based responses
+
+  </Accordion>
+
+  <Accordion title="GPT o3 / o4-mini (Premium)" icon="gem">
+    **Premium accuracy with advanced reasoning capabilities.**
+
+    - 🔍 Can search the web in real-time
+    - 🎓 Exceptional reasoning and problem-solving
+    - ⏱️ Slower response times (5-15 seconds)
+    - 💎 Premium pricing
+
+    **Pricing:** ~$0.05 per conversation
+
+    **Best for:** Research-heavy conversations, fact-checking, complex technical queries
+
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+  **Cost Management:** Higher-tier models can significantly increase spend.
+  Start with GPT-4.1 and only upgrade if the business case warrants it. If
+  you’re unsure, ask us to review projected volumes with you.
+</Warning>
+
+---
+
+## Embed Code
+
+We provide the HTML snippet you can hand to your web team to embed the chat widget on any site.
+
+<Frame>
+  <img src="/images/chat-embed-code.png" alt="Embed Code" />
+</Frame>
+
+### How to Use:
+
+1. Copy the HTML snippet from the **Embed Code** section (or ask us to send it to your developer)
+2. Add it to your website's HTML just before the closing `</body>` tag
+3. The chat widget will appear automatically once published
+
+### Example Code:
+
+```html
+<script
+  src="https://app.callaidan.com/widget/chat.js"
+  data-agent-id="6531f2d6-7067-458b-a782-2cae809a7dc6"
+  data-open="false"
+  async
+></script>
+```
+
+<Note>
+  Copy the snippet directly from the agent’s **Embed Code** section so the
+  `data-agent-id` value matches the agent you’re using.
+</Note>
+
+<Tip>
+  **Customization:** Want it on-brand? Let us know and we’ll provide CSS or
+  coordinate directly with your developer.
+</Tip>
+
+---
+
+## Initial Message
+
+Set the first message contacts see when they open the chat widget. Update the text inside **Embed Settings → Initial Message** and click **Save**.
+
+### Example Initial Messages:
+
+<AccordionGroup>
+  <Accordion title="Friendly Greeting" icon="hand-wave">
+    "👋 Hi there! How can I help you today?"
+  </Accordion>
+
+{" "}
+
+<Accordion title="Specific Offer" icon="gift">
+  "🎉 Welcome! Ask me about our special promotion—20% off all services this
+  week!"
+</Accordion>
+
+{" "}
+
+<Accordion title="Lead Qualification" icon="clipboard-question">
+  "Hi! I'm here to help you find the perfect solution. What brings you here
+  today?"
+</Accordion>
+
+  <Accordion title="Booking Focus" icon="calendar-check">
+    "Ready to book your appointment? I can check availability and get you scheduled in seconds!"
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  The initial message only appears in the **web chat embed**. Other platforms
+  (Instagram, SMS, etc.) start with the user’s message instead.
+</Note>
+
+---
+
+## Interrupt Mode
+
+Interrupt Mode lets your human team take over a conversation instantly. Toggle it under **Settings → Behaviour** whenever you need to change availability.
+
+### How It Works:
+
+When **Interrupt Mode** is enabled:
+
+1. ✅ The AI agent handles all conversations automatically
+2. 👤 A human team member sends a manual message in GoHighLevel
+3. 🛑 The AI agent is **immediately interrupted** for that contact
+4. 🙋 The human takes over the conversation
+5. 🤖 The AI stays silent unless manually reactivated
+
+### When to Enable:
+
+<CardGroup cols={2}>
+  <Card title="Enable Interrupt Mode" icon="toggle-on">
+    **Best for most use cases:** - Gives your team flexibility to jump into conversations - VIP clients get personal attention - Complex situations get routed to humans instantly - You can hand conversations back to the AI when you’re ready
+  </Card>
+
+  <Card title="Disable Interrupt Mode" icon="toggle-off">
+    **When you want full automation:** - Always-on support channels -
+    After-hours campaigns - High-volume, low-touch scenarios - Controlled testing of agent performance
+  </Card>
+</CardGroup>
+
+<Tip>
+  We recommend enabling Interrupt Mode during business hours so your team can
+  step in, then disabling it after hours for full automation.
+</Tip>
+
+---
+
+## Test & Publish Safely
+
+1. Use **Test Agent** inside the editor to run through the scenario you just updated.
+2. If the change touches external systems, place a live test (or have us do it) to confirm logs, tools, and delays behave as expected.
+3. Monitor the first few conversations in Call Logs. If anything feels off, revert the edit or message us immediately.
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Roll Out in Phases" icon="seedling">
+    We launch with a focused use case, validate performance, then layer in additional tools and channels based on results.
+  </Accordion>
+
+{" "}
+
+<Accordion title="Share Nuanced Guidance" icon="bullseye">
+  The more specific your notes, the better the conversations. Send us sample
+  transcripts, objection handling, and brand guidelines so we can keep prompts
+  razor sharp.
+</Accordion>
+
+{" "}
+
+<Accordion title="Collaborative QA" icon="flask">
+  Our team runs structured tests across every channel. When you review
+  transcripts, flag anything that feels off—we’ll iterate quickly.
+</Accordion>
+
+{" "}
+
+<Accordion title="Data-Driven Iteration" icon="chart-line">
+  We monitor logs, scoring, and campaign metrics to surface improvements. Expect
+  proactive recommendations in your strategy calls.
+</Accordion>
+
+  <Accordion title="Tailored Response Timing" icon="clock">
+    We recommend delay settings based on channel intent and audience expectations, then adjust as results come in.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Agent Not Responding" icon="circle-exclamation">
+    Double-check the channel toggle, ensure the agent isn’t paused, and confirm triggers aren’t blocking the message. If everything looks good, share the contact link with us and we’ll investigate.
+  </Accordion>
+
+{" "}
+
+{" "}
+
+<Accordion title="Agent Giving Wrong Answers" icon="message-xmark">
+  Review the prompt and knowledge sources for outdated messaging. After
+  adjusting, retest the conversation. Still off? Send us the transcript so we
+  can fine-tune retrieval and guardrails.
+</Accordion>
+
+{" "}
+
+{" "}
+
+<Accordion title="Tools Not Working" icon="wrench">
+  Reopen the tool, confirm credentials/API keys are current, and run a manual
+  test. Provide the contact and timestamp if you need us to audit logs.
+</Accordion>
+
+{" "}
+
+{" "}
+
+<Accordion title="Response Timing Off" icon="gauge">
+  Adjust the minimum/maximum delay in **Settings → Behaviour**. If responses
+  still feel unnatural, note the channel + scenario and we’ll help tune it
+  further.
+</Accordion>
+
+  <Accordion title="Interrupt Mode Not Switching" icon="hand">
+    Confirm the toggle state, make sure the manual message was sent from a human profile (not the AI), and refresh the thread. If it continues, ping us so we can review permissions.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Next Steps
+
+Ready for the next round of improvements? Here’s how to partner with us:
+
+<CardGroup cols={2}>
+  <Card title="Request a Review" icon="vial" href="mailto:hello@callaidan.com?subject=Chat Agent Review">
+    Share recent wins or concerns and we’ll schedule a deep-dive session.
+  </Card>
+
+{" "}
+
+<Card title="Expand to Voice" icon="phone" href="/voice-agents">
+  Explore how our managed voice campaigns complement chat coverage.
+</Card>
+
+{" "}
+
+<Card title="CRM Enhancements" icon="layer-group" href="/gohighlevel">
+  See the automations we can add to your GoHighLevel workflows.
+</Card>
+
+  <Card title="Performance Dashboard" icon="chart-mixed" href="mailto:support@callaidan.com?subject=Analytics Access">
+    Need a custom report? Let us know and we’ll build it for you.
+  </Card>
+</CardGroup>
